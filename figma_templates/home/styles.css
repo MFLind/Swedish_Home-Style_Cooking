@@ -1,142 +1,86 @@
-.8_4 { 
-	overflow:hidden;
-}.e8_4 { 
-	background-color:rgba(255, 255, 255, 1);
-	width:1512px;
-	height:982px;
-	position:absolute;
-}.e8_9 { 
-	width:1512px;
-	height:982px;
-	position:absolute;
-	left:0px;
-	top:0px;
+
+body { 
+	min-height: 100vh; 
+	margin:0;
 	background-image:url(images/pexels_chan_walrus_941861_1.png);
 	background-repeat:no-repeat;
 	background-size:cover;
-}.e8_5 { 
+	display:flex; flex-direction:column;
+}
+
+
+header { 
+	min-height:50px;
+}
+
+#logo { 
 	color:rgba(255, 255, 255, 1);
-	width:932px;
-	height:84px;
-	position:absolute;
-	left:28px;
-	top:26px;
 	font-family:Inter;
 	text-align:left;
 	font-size:64px;
 	letter-spacing:0;
-}.e11_12 { 
-	background-color:rgba(217.0000022649765, 217.0000022649765, 217.0000022649765, 0.6000000238418579);
-	width:294px;
-	height:86px;
-	position:absolute;
-	left:28px;
-	top:859px;
-	border-top-left-radius:15px;
-	border-top-right-radius:15px;
-	border-bottom-left-radius:15px;
-	border-bottom-right-radius:15px;
-}.e8_8 { 
-	color:rgba(0, 0, 0, 1);
-	width:481px;
-	height:95px;
-	position:absolute;
-	left:-68px;
-	top:866px;
+	text-decoration: none;
+}
+
+/* navigations links */
+
+#menu {
+    font-family: Cormorant SC;
+    font-weight: 300;
+    font-size: 18px;
 	font-family:Inter;
 	text-align:center;
-	font-size:20px;
-	letter-spacing:0;
-}.e11_11 { 
+	font-size:24px;
+	margin-top: 0px;
+}
+
+#menu li {
+    float: right;
+    list-style-type: none;
+    margin-right: 30px;
+}
+
+#menu a {
+    text-decoration: none;
+    color: #fff;
+}
+
+#menu a:hover {
+    border-bottom: 1px solid #fff;
+}
+
+/* Main window */
+
+.main_window { 
 	background-color:rgba(217.0000022649765, 217.0000022649765, 217.0000022649765, 0.6000000238418579);
-	width:795px;
-	height:576px;
-	position:absolute;
-	left:29px;
-	top:137px;
 	border-radius:15px;
-}.e8_10 { 
 	box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
 	color:rgba(0, 0, 0, 1);
-	width:785px;
-	height:560px;
-	position:absolute;
-	left:39px;
-	top:142px;
+    margin-top: 30px;
+    margin-left: 30px;
+	padding: 10px;
+	width: 50%;
+    float: left;
 	font-family:Inter;
 	text-align:left;
-	font-size:Symbol(figma.mixed)px;
-	letter-spacing:0;
-}.e115_155 { 
-	width:304px;
-	height:38px;
-	position:absolute;
-	left:1188px;
-	top:88px;
-}.e11_28 { 
-	background-color:rgba(255, 255, 255, 0);
-	width:91px;
-	height:38px;
-	position:absolute;
-	left:0px;
-	top:0px;
-	border-top-left-radius:4px;
-	border-top-right-radius:4px;
-	border-bottom-left-radius:4px;
-	border-bottom-right-radius:4px;
-}.ei11_28_1303_449 { 
-	color:rgba(255, 255, 255, 1);
-	width:69px;
-	height:29px;
-	position:absolute;
-	left:16px;
-	top:4.5px;
+	font-size: 24px;
+}
+
+/* Footer */
+
+footer { 
+	min-height:50px;
+	background-color:rgba(217.0000022649765, 217.0000022649765, 217.0000022649765, 0.6000000238418579);
+	border-radius: 15px;
+	box-shadow:0px 4px 4px rgba(0, 0, 0, 0.25);
+	color:rgba(0, 0, 0, 1);
+    margin-top: 10px;
+    margin-left: 30px;
+	padding: 2px;
+	width: 20%;
+    float: left;
 	font-family:Inter;
 	text-align:center;
-	font-size:24px;
-	letter-spacing:0;
-}.e11_32 { 
-	background-color:rgba(255, 255, 255, 0);
-	width:90px;
-	height:38px;
-	position:absolute;
-	left:96px;
-	top:0px;
-	border-top-left-radius:4px;
-	border-top-right-radius:4px;
-	border-bottom-left-radius:4px;
-	border-bottom-right-radius:4px;
-}.ei11_32_1303_449 { 
-	color:rgba(255, 255, 255, 1);
-	width:66px;
-	height:29px;
-	position:absolute;
-	left:16px;
-	top:4.5px;
-	font-family:Inter;
-	text-align:center;
-	font-size:24px;
-	letter-spacing:0;
-}.e11_34 { 
-	background-color:rgba(255, 255, 255, 0);
-	width:122px;
-	height:38px;
-	position:absolute;
-	left:191px;
-	top:0px;
-	border-top-left-radius:4px;
-	border-top-right-radius:4px;
-	border-bottom-left-radius:4px;
-	border-bottom-right-radius:4px;
-}.ei11_34_1303_449 { 
-	color:rgba(255, 255, 255, 1);
-	width:95px;
-	height:29px;
-	position:absolute;
-	left:16px;
-	top:4.5px;
-	font-family:Inter;
-	text-align:center;
-	font-size:24px;
-	letter-spacing:0;
-}
+	font-size: 18px;
+}
+
