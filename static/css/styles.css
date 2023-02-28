@@ -90,6 +90,15 @@ footer {
 	margin-bottom: 30px;
 }
 
+/* Booking Image */
+bookingimage {
+	height: auto;
+	max-width: 40%;
+    margin-left: 40px;
+	border-radius:15px;
+	float: left;
+}
+
 /* Menu Image */
 .applepie_image img {
 	height: auto;
@@ -114,6 +123,36 @@ footer {
 }
 
 .menu_window li {
+	list-style-type: none;
+}
+
+/* Booking page styles */
+
+.booking_frame {
+	background-color: rgba(111, 36, 36, 0.96);
+}
+
+.booking_columns {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+
+/* Booking window */
+
+.booking_window { 
+	background-color:rgba(191, 189, 189, 1);
+	border-radius:15px;
+	color:rgba(0, 0, 0, 1);
+    margin-right: 40px;
+	height: 100%;
+	width: 50%;
+    float: right;
+	text-align:center;
+	font-size: 24px;
+}
+
+.booking_window li {
 	list-style-type: none;
 }
 
