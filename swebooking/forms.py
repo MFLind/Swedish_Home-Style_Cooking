@@ -1,12 +1,33 @@
 from django import forms
+from .models import TableBooking
 
 
-class BookingForm(forms.Form):
-    name = forms.CharField(label='Name', max_length=48)
-    booking_date_time = forms.DateTimeField(input_formats=['%d/%m/%Y %H:%M'],
-        widget=forms.DateTimeInput(attrs={'class': 'form-control datetimepicker-input',
-        'data-target': '#datetimepicker1'}))
-    persons = forms.IntegerField(label='Number of persons', min_value=1)
-    telephone_number = forms.CharField(label='Telephone', max_length=16)
+class BookingForm(forms.ModelForm):
 
+    booking_date_time = forms.DateTimeField(
+        widget=DateTimePicker(
+            options={
+                'useCurrent': True,
+                'collapse': False,
 
+                # Calendar and time widget formatting
+                'time': 'fa fa-clock-o',
+                'date': 'fa fa-calendar',
+                'up': 'fa fa-arrow-up',
+                'down': 'fa fa-arrow-down',
+                'previous': 'fa fa-chevron-left',
+                'next': 'fa fa-chevron-right',
+                'today': 'fa fa-calendar-check-o',
+                'clear': 'fa fa-delete',
+                'close': 'fa fa-times'
+            },
+            attrs={
+                'append': 'fa fa-calendar',
+                'icon_toggle': True,
+            }
+        )
+    )
+
+    class Meta:
+        model = TableBooking
+        fields = ('name', 'telephone_number', 'persons', 'booking_date_time')
