@@ -15,3 +15,4 @@ class TableBooking(models.Model):
     def __str__(self):
         return f' Account {self.user} did a booking for guest {self.name}, {self.persons} Persons '  \
             f' at {self.booking_date_time}'
+            
