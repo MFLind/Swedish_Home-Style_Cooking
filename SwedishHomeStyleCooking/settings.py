@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'tempus_dominus',
+    'django_bootstrap5',
     'swebooking',
 ]
 

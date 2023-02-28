@@ -1,4 +1,6 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
+from .forms import BookingForm
 
 
 def home(request):
@@ -10,5 +12,13 @@ def menu(request):
 
 
 def booking(request):
-    return render(request, 'swebooking/booking.html')
+    if request.method == 'POST':
+        form = BookingForm(request.POST)
+        
+        if form.is_valid():
+            return HttpResponseRedirect('/welcome/')
+    else:
+        form = BookingForm()
+
+    return render(request, 'swebooking/booking.html', {'form': form})
 

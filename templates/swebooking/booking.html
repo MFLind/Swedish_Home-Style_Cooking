@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load django_bootstrap5 %}
 {% load static %}
 {% block content %}
 {% csrf_token %}
@@ -8,39 +9,17 @@
             background-color: rgba(13, 6, 6, 0.87);
         }
     </style>
-    <div class="menu_frame">
-        <div class="menu_columns">
-            <div>
-              <img class="bookingimage" src="{% static 'assets/images/pexels_karthik_reddy_397913_1.png' %}" alt="Cake picture">
-            </div>
-            <div class="menu_window">
-                <h2>Menu</h2>
-
-                <h3>Starter</h3>
-                <ul>
-                    <li>Toast Skagen.</li>
-                    <li>Gravad lax (cured salmon) with crisp bread and mustard sauce.</li>
-                    <li>Boiled baltic shrimp with dill mayonnaise.</li>
-                    <li>Rice porridge with cinnamon and sugar and milk.</li>
-                    <li>Pea soup.</li>
-                </ul>
-                <h3>Main course</h3>
-                <ul>
-                    <li>Swedish meatballs with mashed potatoes and lingonberry jam and brown sauce.</li>
-                    <li>Pickled herring with boiled potatoes and sour cream.</li>
-                    <li>Fried herring with potatoes and eggs.</li>
-                    <li>Falukorv (swedish sausage) with macaroni and ketchup.</li>
-                    <li>Blood pudding with lingonberry jam.</li>
-                </ul>
-
-                <h3>Dessert</h3>
-                <ul>
-                    <li>(Prinsesstårta) Princess cake.</li>
-                    <li>(Äppelkaka) Apple cake.</li>
-                    <li>(Våfflor) Swedish waffles.</li>
-                    <li>(Pannkakor) Swedish pancakes.</li>
-                    <li>(Kanelbulle) Swedish cinnamon bun.</li>
-                </ul>
+    <div class="booking_frame">
+        <div class="booking_columns">
+            <div class="booking_window">
+                <h2>Booking</h2>
+                <div>
+                    <form action="#" method="POST">
+                        {% csrf_token %}
+                        {% bootstrap_form form %}
+                        <input type="submit" value="OK">
+                    </form>
+                </div>
             </div>
         </div>
     </div>
