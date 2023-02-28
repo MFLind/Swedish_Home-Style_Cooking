@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Swedish Home-Style Cooking</title>
+    <meta name="description" content="Swedish Home-Style Cooking Restaurant">
+    <meta name="author" content="Madeleine Frithiof-Lindergren">
+    <meta property="og:title" content="Swedish Home-Style Cooking Restaurant">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.swecooking.org">
+    <meta property="og:description" content="Swedish Home-Style Cooking Restaurant">
+    <meta property="og:image" content="{% static 'assets/images/image.png' %}">
+    <link rel="icon" href="{% static 'assets/images/favicon.ico' %}">
+    <link rel="icon" href="{% static 'assets/images/favicon.svg' %}" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="{% static 'assets/images/apple-touch-icon.png' %}">
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+  <header>
+    <a href="{% url 'home' %}" id="logo">
+      Swedish Home-Style Cooking
+    </a>
+    <nav>
+      <ul id="menu">
+        <li>
+          <a href="{% url 'home' %}">Home</a>
+        </li>
+        <li>
+          <a href="{% url 'home' %}">Menu</a>
+        </li>
+        <li>
+          <a href="{% url 'home' %}">Booking</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  {% block content %}
+  {% endblock content %}
+
+  <footer>
+    <p>Phone number: 123 6433854<br>
+      Address: Tegelängsgatan 10<br>
+      Opening hours: 17:00 - 00:00</p>
+  </footer>
+</body>
+
+</html>
