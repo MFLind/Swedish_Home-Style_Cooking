@@ -1,45 +1,17 @@
-<html lang="en">
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% csrf_token %}
 
-<head>
-    <meta charset="utf-8">
-
-    <title>Swedish Home-Style Cooking</title>
-    <meta name="description" content="Swedish Home-Style Cooking Restaurant">
-    <meta name="author" content="Madeleine Frithiof-Lindergren">
-    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="styles.css">
     <style>
         header {
             background-color: rgba(13, 6, 6, 0.87);
         }
     </style>
-
-</head>
-
-<body>
-    <header>
-        <a href="index.html" id="logo">
-            Swedish Home-Style Cooking
-        </a>
-        <nav>
-            <ul id="menu">
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
-                <li>
-                    <a href="menu.html">Menu</a>
-                </li>
-                <li>
-                    <a href="booking.html">Booking</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
     <div class="menu_frame">
         <div class="menu_columns">
             <div class="applepie_image">
-                <img src="images/pexels_roman_odintsov_5836525_1.png" alt="Apple Pie picture">
+                <img src="{% static 'assets/images/pexels_roman_odintsov_5836525_1.png' %}" alt="Apple Pie picture">
             </div>
             <div class="menu_window">
                 <h2>Menu</h2>
@@ -72,12 +44,4 @@
             </div>
         </div>
     </div>
-    <footer>
-        <p>Phone number: 123 6433854<br>
-            Address: Tegelängsgatan 10<br>
-            Opening hours: 17:00 - 00:00</p>
-    </footer>
-
-</body>
-
-</html>
+{% endblock content %}
