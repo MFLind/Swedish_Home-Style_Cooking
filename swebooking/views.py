@@ -2,11 +2,13 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
+from bootstrap_datepicker_plus.widgets import DateTimePickerInput
 from django.urls import reverse_lazy
 from django.views import generic
 from .forms import BookingForm
 from .models import TableBooking
 
+app_name = 'swebooking'
 
 def home(request):
     return render(request, 'swebooking/index.html')
@@ -27,6 +29,18 @@ def seebookings(request):
     context = { 'bookings': tablebookings}
     return render(request, 'swebooking/seebookings.html', context)
 
+
+class BookingView(generic.edit.CreateView):
+    model = TableBooking
+    fields = ['name', 'telephone_number', 'persons', 'booking_date_time']
+    template_name = "swebooking/booking.html"
+
+    def get_form(self):
+        form = BookingForm()
+        form.fields['booking_date_time'].widget = DateTimePickerInput()
+        return form
+
+
 @login_required
 def booking(request):
     if request.method == 'POST':
@@ -34,11 +48,13 @@ def booking(request):
         
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/welcome/')
-    else:
-        form = BookingForm()
+            return redirect('seebookings')
+
+    form = BookingForm()
+    form.fields['booking_date_time'].widgets = DateTimePickerInput()
 
     return render(request, 'swebooking/booking.html', {'form': form})
+
 
 @login_required
 def edit(request, id):

@@ -5,7 +5,6 @@ from django.forms.widgets import NumberInput
 
 
 class BookingForm(forms.ModelForm):
-#    start_datetime=forms.SplitDateTimeField(input_time_formats=['%I:%M %p'])
 
     class Meta:
         model = TableBooking

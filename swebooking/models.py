@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from django.contrib.auth.models import User
 
 
@@ -16,3 +17,8 @@ class TableBooking(models.Model):
         return f' Account {self.user} did a booking for guest {self.name}, {self.persons} Persons '  \
             f' at {self.booking_date_time}'
             
+
+    def get_absolute_url(self):
+        return reverse('swebooking:edit', kwargs={'id: self.id'})
+
+    
