@@ -1,25 +1,46 @@
-<html lang="en">
-          <head>
-            <meta charset="utf-8">
-          
-            <title>Html Generated</title>
-            <meta name="description" content="Figma htmlGenerator">
-            <meta name="author" content="htmlGenerator">
-            <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% load static %}
+{% block content %}
+{% csrf_token %}
 
-            <link rel="stylesheet" href="styles.css">
-            
-            <style>
-              /*
-                Figma Background for illustrative/preview purposes only.
-                You can remove this style tag with no consequence
-              */
-              body {background: #E5E5E5; }
-            </style>
-          
-          </head>
-          
-          <body>
-            <div class=e34_83><div  class="e110_503"></div><span  class="e34_84">Swedish Home-Style Cooking</span><div  class="e110_502"></div><div class=e34_85><span  class="ei34_85_1303_449">Home</span></div><div class=e34_87><span  class="ei34_87_1303_449">Menu</span></div><div class=e34_89><span  class="ei34_89_1303_449">Booking</span></div><div class=e110_392><span  class="ei110_392_110_282">8</span><span  class="ei110_392_110_287">9</span><span  class="ei110_392_112_0">18:00</span><span  class="ei110_392_112_1">20:00</span><span  class="ei110_392_112_2">22:00</span><span  class="ei110_392_112_3">18:00</span><span  class="ei110_392_112_4">20:00</span><span  class="ei110_392_112_5">22:00</span><span  class="ei110_392_112_6"></span><span  class="ei110_392_112_7"> </span><span  class="ei110_392_112_8"></span><span  class="ei110_392_110_288">10</span><span  class="ei110_392_110_289"></span><span  class="ei110_392_110_283">18:00</span><span  class="ei110_392_110_284">20:00</span><span  class="ei110_392_110_285">22:00</span><div  class="ei110_392_110_281"></div><div  class="ei110_392_112_9"></div><div  class="ei110_392_112_10"></div><div  class="ei110_392_112_15"></div><div  class="ei110_392_110_286"></div></div><div class=e110_414><span  class="ei110_414_110_282">Table</span><span  class="ei110_414_110_287">1</span><span  class="ei110_414_112_0">18:00</span><span  class="ei110_414_112_1">20:00</span><span  class="ei110_414_112_2">22:00</span><span  class="ei110_414_112_3">18:00</span><span  class="ei110_414_112_4">20:00</span><span  class="ei110_414_112_5">22:00</span><span  class="ei110_414_112_6">18:00</span><span  class="ei110_414_112_7">20:00</span><span  class="ei110_414_112_8">22:00</span><span  class="ei110_414_110_288">2</span><span  class="ei110_414_110_289">3</span><span  class="ei110_414_110_283">Time</span><span  class="ei110_414_110_284">Time</span><span  class="ei110_414_110_285">Time</span><div  class="ei110_414_110_281"></div><div  class="ei110_414_112_9"></div><div  class="ei110_414_112_10"></div><div  class="ei110_414_112_15"></div><div  class="ei110_414_110_286"></div></div><div class=e110_458></div><div class=e110_480><span  class="ei110_480_110_282">4</span><span  class="ei110_480_110_287">5</span><span  class="ei110_480_112_0">18:00</span><span  class="ei110_480_112_1">20:00</span><span  class="ei110_480_112_2">22:00</span><span  class="ei110_480_112_3">18:00</span><span  class="ei110_480_112_4">20:00</span><span  class="ei110_480_112_5">22:00</span><span  class="ei110_480_112_6">18:00</span><span  class="ei110_480_112_7">20:00</span><span  class="ei110_480_112_8">22:00</span><span  class="ei110_480_110_288">6</span><span  class="ei110_480_110_289">7</span><span  class="ei110_480_110_283">18:00</span><span  class="ei110_480_110_284">20:00</span><span  class="ei110_480_110_285">22:00</span><div  class="ei110_480_110_281"></div><div  class="ei110_480_112_9"></div><div  class="ei110_480_112_10"></div><div  class="ei110_480_112_15"></div><div  class="ei110_480_110_286"></div></div></div>
-          </body>
-          </html>
+<div class="container">
+  <div class="card border-0">
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table caption-top">
+          <caption>Bookings</caption>
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Admin User</th>
+              <th scope="col">Name</th>
+              <th scope="col">Booking date and time</th>
+              <th scope="col">Persons</th>
+              <th scope="col">Telephone</th>
+              <th scope="col">Edit</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for booking in bookings %}
+            <tr>
+              <th scope="row">{{ booking.id }}</th>
+              <td>{{ booking.user }}</td>
+              <td>{{ booking.name }}</td>
+              <td>{{ booking.booking_date_time }}</td>
+              <td>{{ booking.persons }}</td>
+              <td>{{ booking.telephone_number }}</td>
+              <td><a class="btn btn-success" href="/edit/{{ booking.id }}" role="button">Edit</a></td>
+              <td><a class="btn btn-danger" href="/delete/{{ booking.id }}" role="button">Delete</a></td>
+            </tr>
+            {% endfor %}
+            {% csrf_token %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
