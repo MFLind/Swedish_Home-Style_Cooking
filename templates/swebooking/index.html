@@ -3,36 +3,34 @@
 {% block content %}
 {% csrf_token %}
 
-<style>
-body {
-  background-image: url("/static/assets/images/pexels_chan_walrus_941861_1.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-</style>
+<div class="container opacity-75">
+    <div class="card mt-5 ml-3 " style="width: 40rem;">
+        <div class="card-body">
+            <h2 class="fs-2">Welcome to Swedish Home-Style Cooking</h2>
 
-  <div class="main_window">
-    <h2>Welcome to Swedish Home-Style Cooking</h2>
-
-    <p>
-      A cozy and authentic Swedish eatery. We believe in serving traditional and
-      home-style Swedish cuisine, made with only the freshest and highest quality
-      ingredients.
-    </p>
-    <p>
-      Our menu is inspired by classic Swedish dishes that have been passed down from generation to generation. From
-      the
-      hearty and filling meatballs with mashed potatoes and lingonberry sauce, to the light and fresh gravad lax
-      (cured
-      salmon) with crisp bread and mustard sauce, there is something for everyone at our restaurant.
-    </p>
-    <p>
-      Come and join us for a taste of Sweden. Whether you're looking for a romantic dinner for two, a family
-      gathering,
-      or a group celebration, our warm and friendly atmosphere will make you feel right at home.
-    </p>
-    <p>
-      We look forward to serving you soon!
-    </p>
-  </div>
+            <p class="fs-4">
+                A cozy and authentic Swedish eatery. We believe in serving traditional and
+                home-style Swedish cuisine, made with only the freshest and highest quality
+                ingredients.
+            </p>
+            <p class="fs-4">
+                Our menu is inspired by classic Swedish dishes that have been passed down from generation to generation.
+                From
+                the
+                hearty and filling meatballs with mashed potatoes and lingonberry sauce, to the light and fresh gravad
+                lax
+                (cured
+                salmon) with crisp bread and mustard sauce, there is something for everyone at our restaurant.
+            </p>
+            <p class="fs-4">
+                Come and join us for a taste of Sweden. Whether you're looking for a romantic dinner for two, a family
+                gathering,
+                or a group celebration, our warm and friendly atmosphere will make you feel right at home.
+            </p>
+            <p class="fs-4">
+                We look forward to serving you soon!
+            </p>
+        </div>
+    </div>
+</div>
 {% endblock content %}

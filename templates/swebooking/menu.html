@@ -3,17 +3,13 @@
 {% block content %}
 {% csrf_token %}
 
-    <style>
-        header {
-            background-color: rgba(13, 6, 6, 0.87);
-        }
-    </style>
-    <div class="menu_frame">
-        <div class="menu_columns">
-            <div class="applepie_image">
+<div class="container">
+    <div class="row">
+        <div class="card border-0" style="width: 40rem;">
                 <img src="{% static 'assets/images/pexels_roman_odintsov_5836525_1.png' %}" alt="Apple Pie picture">
-            </div>
-            <div class="menu_window">
+        </div>
+        <div class="card border-0" style="width: 40rem;">
+            <div class="card-body">
                 <h2>Menu</h2>
 
                 <h3>Starter</h3>
@@ -44,4 +40,5 @@
             </div>
         </div>
     </div>
+</div>
 {% endblock content %}
