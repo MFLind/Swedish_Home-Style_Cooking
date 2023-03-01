@@ -18,7 +18,6 @@
   <meta property="og:description" content="Swedish Home-Style Cooking Restaurant">
   <meta property="og:image" content="{% static 'assets/images/image.png' %}">
   <link rel="icon" href="{% static 'assets/images/favicon.ico' %}">
-  <link rel="icon" href="{% static 'assets/images/favicon.svg' %}" type="image/svg+xml">
   <link rel="apple-touch-icon" href="{% static 'assets/images/apple-touch-icon.png' %}">
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
@@ -29,34 +28,37 @@
 <body>
 
   <section id="header">
-    <nav class="navbar navbar-expand-sm navbar-dark">
-      <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'assets/images/swe_logo.png' %}" class="img-fuild" style="max-width: 40%;"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
-        aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarToggler">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="{% url 'home' %}">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'menu' %}">Menu</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'booking' %}">Booking</a>
-          </li>
-          {% if user.is_authenticated %}
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'seebookings' %}">Reservations</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-          </li>
-          {% endif %}
-        </ul>
-      </div>
-    </nav>
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg navbar-dark" role="navigation">
+        <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'assets/images/swe_logo.png' %}"
+            class="img-fuild" style="max-width: 40%; background-color: antiquewhite;"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navbar"
+          aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="main-navbar">
+          <ul class="navbar-nav mr-auto navbar-center">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'menu' %}">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'booking' %}">Booking</a>
+            </li>
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'seebookings' %}">Reservations</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+      </nav>
+    </div>
   </section>
 
   <section id="main">
