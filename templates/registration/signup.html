@@ -1,15 +1,21 @@
 {% extends 'base.html' %}
 {% load static %}
-
-{% block title %}Sign Up{% endblock %}
-
 {% block content %}
 {% csrf_token %}
-  <h2>Sign up</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Sign Up</button>
-  </form>
+
+<div class="container opacity-75">
+  <div class="d-flex justify-content-center">
+    <div class="card mt-5 ml-3">
+      <div class="card-body">
+        <h2>Sign up</h2>
+        <form method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button  class="btn btn-primary" type="submit">Sign Up</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
 {% endblock %}
