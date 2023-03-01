@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% csrf_token %}
+
+  <p>Logged out!</p>
+  <a href="{% url 'login'%}">Click here to login again.</a>
+
+  {% endblock %}

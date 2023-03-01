@@ -63,6 +63,9 @@ CSRF_TRUSTED_ORIGINS = [
 
 ROOT_URLCONF = 'SwedishHomeStyleCooking.urls'
 
+# Redirect to home URL after login (Default redirects to /accounts/profile/)
+LOGIN_REDIRECT_URL = '/'
+
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 TEMPLATES = [
     {
