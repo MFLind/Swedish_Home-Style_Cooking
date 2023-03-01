@@ -4,23 +4,23 @@
 {% block content %}
 {% csrf_token %}
 
-    <style>
-        header {
-            background-color: rgba(13, 6, 6, 0.87);
-        }
-    </style>
-    <div class="booking_frame">
-        <div class="booking_columns">
-            <div class="booking_window">
+<div class="container">
+    <div class="row">
+        <div class="card col-md mt-5 ml-3 border-0" style="width: 40rem;">
+            <div class="card-body">
                 <h2>Booking</h2>
                 <div>
-                    <form action="#" method="POST">
+                    <form action="{% url 'booking' %}" method="POST">
                         {% csrf_token %}
                         {% bootstrap_form form %}
-                        <input type="submit" value="OK">
+                        <button class="btn btn-primary" type="submit">OK</button>
                     </form>
                 </div>
             </div>
         </div>
+        <div class="card col-md mt-5 ml-3 border-0" style="width: 40rem;">
+            <img src="{% static 'assets/images/pexels_karthik_reddy_397913_1.png' %}" alt="Apple Pie picture">
+        </div>
     </div>
+</div>
 {% endblock content %}
