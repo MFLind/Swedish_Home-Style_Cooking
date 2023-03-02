@@ -28,7 +28,7 @@ class SignUpView(generic.CreateView):
 
 
 def seebookings(request):
-    tablebookings = TableBooking.objects.filter().order_by('-booking_date_time')[:5]
+    tablebookings = TableBooking.objects.filter().order_by('-booking_date_time')
     context = { 'bookings': tablebookings}
     return render(request, 'swebooking/seebookings.html', context)
 
@@ -42,7 +42,7 @@ class BookingView(FormView):
 
     def get_form(self):
         form = BookingForm()
-        form.fields['booking_date_time'].widget = DateTimePickerInput()
+        form.fields['booking_date_time'].widget = DateTimePickerInput(options={'format': 'YYYY-MM-DD HH:00'})
         return form
 
     def post(self, request, *args, **kwargs):
@@ -67,7 +67,7 @@ class EditView(FormView):
     def get_form(self):
         tablebooking = get_object_or_404(TableBooking, id=self.kwargs['booking_id'])
         form = BookingForm(instance=tablebooking)
-        form.fields['booking_date_time'].widget = DateTimePickerInput()
+        form.fields['booking_date_time'].widget = DateTimePickerInput(options={'format': 'YYYY-MM-DD HH:00'})
         return form
 
     def post(self, request, *args, **kwargs):
