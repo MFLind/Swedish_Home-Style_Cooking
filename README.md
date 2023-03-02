@@ -51,4 +51,4 @@ The Game is deployed using Code Institute's mock terminal for Heroku.
 
 # Credits
 - Code Institute for deployment terminal
-- Wikipedia for Battleship gameplay
+- pexels.com for pictur. The pepol a have take ther pictur is Karthik reddy, Chan Walrus and ROMAN ODINTSOV.
