@@ -1,12 +1,16 @@
-{% load django_bootstrap5 %}
-
-{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+{% load django_bootstrap5 %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+{% load static %}
+<html lang="{{ LANGUAGE_CODE|default:'en_us' }}">
+
+
+{% load django_bootstrap5 %}
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Swedish Home-Style Cooking</title>
   <meta name="description" content="Swedish Home-Style Cooking Restaurant">
   <meta name="author" content="Madeleine Frithiof-Lindergren">
@@ -18,11 +22,18 @@
   <link rel="icon" href="{% static 'assets/images/favicon.ico' %}">
   <link rel="apple-touch-icon" href="{% static 'assets/images/apple-touch-icon.png' %}">
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+  <!-- jquery -->
+  <script src="{% static 'js/jquery-3.6.3.min.js' %}"></script>
 
+  <!-- Bootstrap CSS -->
   {% bootstrap_css %}
+
+  <!-- Bootstrap JavaScript if it is in head -->
+  {% if 'javascript_in_head'|bootstrap_setting %}
   {% bootstrap_javascript %}
-  {% bootstrap_messages %}
+  {% endif %}
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 
@@ -62,12 +73,37 @@
     </div>
   </section>
 
+  <script>
+    setTimeout(function () {
+      if ($('#msg').length > 0) {
+        $('#msg').remove();
+      }
+    }, 2000)
+  </script>
+
+
   <section id="main">
     {% block content %}
     {% endblock content %}
   </section>
 
-
+  {% if messages %}
+  <div class="container">
+    <div class="card mt-5 ml-3 ">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-sm-6 col-sm-offset-3">
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}" id="msg" role="alert">
+              <p>{{ message }}</p>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
 
   <footer>
     <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">

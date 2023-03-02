@@ -1,14 +1,15 @@
 from django.urls import path
 from swebooking import views
 from .views import SignUpView
+from django.contrib.auth.decorators import login_required
 
 
 urlpatterns = [
     path('', views.home, name='home'),
     path('menu/', views.menu, name='menu'),
-    path('booking/', views.BookingView.as_view(), name='booking'),
+    path('booking/', login_required(views.BookingView.as_view()), name='booking'),
     path('seebookings/', views.seebookings, name='seebookings'),
-    path('edit/<id>', views.edit, name='edit'),
-    path('delete/<id>', views.delete, name='delete'),
+    path('edit/<int:booking_id>', login_required(views.EditView.as_view()), name='edit'),
+    path('delete/<int:booking_id>', login_required(views.DeleteView.as_view()), name='delete'),
     path('signup/', SignUpView.as_view(), name='signup'),
 ]

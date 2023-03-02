@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
-{% load django_bootstrap5 %}
 {% load static %}
+{% load django_bootstrap5 %}
+
 {% block content %}
 {% csrf_token %}
 
@@ -10,7 +11,8 @@
             <div class="card-body">
                 <h2>Delete Booking</h2>
                 <div>
-                    <form action="/delete/{{ booking.id }}" method="POST">
+                    {{ form.media }}
+                    <form method="POST">
                         {% csrf_token %}
                         {% bootstrap_form form %}
                         <button class="btn btn-primary" type="submit">Delete</button>
