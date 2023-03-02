@@ -28,7 +28,7 @@ A live view of how the webbsit locks on differant scrins:
 
 I have done manual testing with the following methods:
 - Running thru pylint for PEP8 validation and getting no errors
-- Test playing the game both locally on my command prompt and also on Heroku: https://battleships-3.herokuapp.com/
+- Test playing the game both locally on my command prompt and also on Heroku: 
 - Testing inputs with both incorrect values and correct values
 
 ## Bugs
