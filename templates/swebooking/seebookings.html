@@ -28,7 +28,7 @@
               <th scope="row">{{ booking.id }}</th>
               <td>{{ booking.user }}</td>
               <td>{{ booking.name }}</td>
-              <td>{{ booking.booking_date_time }}</td>
+              <td>{{ booking.booking_date_time |date:"Y-m-d H:00" }}</td>
               <td>{{ booking.persons }}</td>
               <td>{{ booking.telephone_number }}</td>
               <td><a class="btn btn-success" href="/edit/{{ booking.id }}" role="button">Edit</a></td>

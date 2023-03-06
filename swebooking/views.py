@@ -7,8 +7,10 @@ from django.urls import reverse_lazy
 from django.views import generic
 from django.contrib import messages
 from django.views.generic.edit import FormView
+from django.utils import timezone
 from .forms import BookingForm
 from .models import TableBooking
+
 
 app_name = 'swebooking'
 
@@ -28,7 +30,7 @@ class SignUpView(generic.CreateView):
 
 
 def seebookings(request):
-    tablebookings = TableBooking.objects.filter().order_by('-booking_date_time')
+    tablebookings = TableBooking.objects.filter().order_by('booking_date_time')
     context = { 'bookings': tablebookings}
     return render(request, 'swebooking/seebookings.html', context)
 
@@ -42,6 +44,14 @@ class BookingView(FormView):
 
     def get_form(self):
         form = BookingForm()
+
+        firstdate = timezone.now().replace(minute=0).replace(second=0).replace(microsecond=0)
+        if firstdate.hour < 17:
+            firstdate = firstdate.replace(hour=17)
+        if firstdate.hour > 23:
+            firstdate = firstdate.replace(hour=17).replace(day=firstdate.day+1)
+
+        form.fields['booking_date_time'].initial = firstdate
         form.fields['booking_date_time'].widget = DateTimePickerInput(options={'format': 'YYYY-MM-DD HH:00'})
         return form
 
@@ -71,9 +81,12 @@ class EditView(FormView):
         return form
 
     def post(self, request, *args, **kwargs):
+        booking = get_object_or_404(TableBooking, id=kwargs['booking_id'])
         form = BookingForm(request.POST)
+        form.is_edit = True
+        form.old_booking = booking.persons
+        
         if form.is_valid():
-            booking = get_object_or_404(TableBooking, id=kwargs['booking_id'])
             booking.user = request.user
             booking.name = form.cleaned_data['name']
             booking.persons = form.cleaned_data['persons']
@@ -82,7 +95,8 @@ class EditView(FormView):
             booking.save()
             messages.success(request, 'Your booking is updated successfully!')
             return redirect('seebookings')
-        
+
+        form.fields['booking_date_time'].widget = DateTimePickerInput(options={'format': 'YYYY-MM-DD HH:00'})
         return render(request, 'swebooking/editbooking.html', {'form': form})
 
 

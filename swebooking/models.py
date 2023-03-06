@@ -12,21 +12,23 @@ max_number_of_persons_per_booking = 15
 
 
 def validate_persons(value):
-
     if value > max_number_of_persons_per_booking:
         raise ValidationError(f'Booking cant be for more than {max_number_of_persons_per_booking} persons')
 
 
-def validate_datetime(value):
- 
-    v1 = value.replace(minute=0)
-    v2 = value.replace(minute=59)
-    total_persons = TableBooking.objects.filter(booking_date_time__gte=v1, booking_date_time__lte=v2).aggregate(Sum('persons'))['persons__sum']
-#    if total_persons is not None:
-#        raise ValidationError(f'number {total_persons}')
-    if total_persons > max_number_of_persons_per_hours:
-        raise ValidationError(f'number {total_persons}')
+def get_totalt_bookings_at_time(value):
+        value = value.replace(minute=0).replace(second=0).replace(microsecond=0)
+        v2 = value.replace(minute=59).replace(second=0).replace(microsecond=0)
+        pset = TableBooking.objects.filter(booking_date_time__gte=value, booking_date_time__lte=v2).aggregate(Sum('persons'))
+        total_persons = pset['persons__sum']
+        if total_persons is None:
+            total_persons = 0
 
+        return total_persons
+
+
+def validate_datetime(value):
+    value = value.replace(minute=0).replace(second=0).replace(microsecond=0)
 
     if value < timezone.now():
         raise ValidationError('Booking date and time need to be in future')
@@ -52,5 +54,6 @@ class TableBooking(models.Model):
 
     def get_absolute_url(self):
         return reverse('swebooking:edit', kwargs={'id: self.id'})
+
 
     
