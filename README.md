@@ -23,7 +23,13 @@ This is the home page whear you can read about the resturant.
 
 This is the manu.
 
+This is wher you comming when you click on booking. 
 
+Affter you have loggd in you comming her wher you can book.
+
+Hear is wher you can see the reservations.
+
+When you have clickt on loggd out you comming her. 
 
 # Features
 - Book a table.
