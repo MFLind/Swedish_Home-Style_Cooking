@@ -66,6 +66,7 @@ I have done manual testing with the following methods:
 - Running thru pylint for PEP8 validation and getting no errors
 - Test website both locally on my command prompt and also on Heroku: https://swedish-home-style-cooking.herokuapp.com/
 - Testing inputs with both incorrect values and correct values
+- Testing has been done against different screen resolutions, but some testing tools where sensitive to X-Frame protection that django provides.
 
 ![bild](https://user-images.githubusercontent.com/106115510/223101370-a5bfa3a6-94e3-4855-b9d0-2a8c999014fa.png)
 
