@@ -18,6 +18,11 @@ A live view of how the website locks on differant screens:
 
 
 # Differant view on the website.
+This is the home page whear you can read about the resturant.
+![bild](https://user-images.githubusercontent.com/106115510/223072514-41f58382-97d9-40bd-bcd1-9ac5d70af7ea.png)
+
+This is the manu.
+
 
 
 # Features
