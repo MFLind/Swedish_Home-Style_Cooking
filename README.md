@@ -15,7 +15,11 @@ During the design process Figma was used for sketching the UX design, design was
 Agile working methods with planning and iterative working was done during the process.
 
 A live view of how the website locks on differant screens:
+![bild](https://user-images.githubusercontent.com/106115510/223115486-eefbf6c6-9a9c-41ed-b97c-bd480a178fea.png)
 
+![bild](https://user-images.githubusercontent.com/106115510/223115782-23ca9046-1099-4b1f-95e9-bf92aefe5f8e.png)
+
+![bild](https://user-images.githubusercontent.com/106115510/223115973-2a0eb20b-a8d5-478d-a27e-d87ad78df25a.png)
 
 # Differant view on the website.
 This is the home page where you can read about the resturant.
