@@ -46,9 +46,9 @@
             aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="main-navbar">
-            <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'assets/images/swe_logo.png' %}"
+          <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'assets/images/swe_logo.png' %}"
               class="img-fuild" style="max-width: 40%; background-color: antiquewhite;"></a>
+          <div class="collapse navbar-collapse" id="main-navbar">
             <ul class="navbar-nav mr-auto navbar-center">
               <li class="nav-item active">
                 <a class="nav-link" href="{% url 'home' %}">Home</a>
