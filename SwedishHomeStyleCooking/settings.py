@@ -33,7 +33,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [swedish-home-style-cooking.herokuapp.com]
 
 MESSAGE_TAGS = {
     messages.DEBUG: 'alert-info',
