@@ -51,11 +51,3 @@
 	padding: 280px 0 220px;
 
 }
-
-/* for smaller screen */
-
-@media screen and (max-width: 1200px){
-    #main {
-        width: 150px;
-    }
-}
