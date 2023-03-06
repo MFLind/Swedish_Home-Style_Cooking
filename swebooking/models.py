@@ -63,4 +63,3 @@ class TableBooking(models.Model):
     def get_absolute_url(self):
         """ get absolute url """
         return reverse('swebooking:edit', kwargs={'id: self.id'})
-    

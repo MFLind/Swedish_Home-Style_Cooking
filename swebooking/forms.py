@@ -7,6 +7,7 @@ from django import forms
 from .models import TableBooking
 from .models import MAX_NUMBER_OF_PERSONS_PER_HOURS, get_totalt_bookings_at_time
 
+
 class BookingForm(forms.ModelForm):
     """ Booking form """
     def __init__(self, *args, **kwargs):
