@@ -42,13 +42,13 @@
   <section id="header">
       <nav class="navbar navbar-expand-lg navbar-dark" role="navigation">
         <div class="container-fluid">
-          <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'assets/images/swe_logo.png' %}"
-              class="img-fuild" style="max-width: 40%; background-color: antiquewhite;"></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navbar"
             aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="main-navbar">
+            <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'assets/images/swe_logo.png' %}"
+              class="img-fuild" style="max-width: 40%; background-color: antiquewhite;"></a>
             <ul class="navbar-nav mr-auto navbar-center">
               <li class="nav-item active">
                 <a class="nav-link" href="{% url 'home' %}">Home</a>
