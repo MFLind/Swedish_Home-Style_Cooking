@@ -1,1 +1,1 @@
-web: gunicorn SwedishHomeStyleCooking.wsgi
+web: gunicorn SwedishHomeStyleCooking.wsgi --preload
