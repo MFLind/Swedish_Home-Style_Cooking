@@ -22,14 +22,19 @@ This is the home page whear you can read about the resturant.
 ![bild](https://user-images.githubusercontent.com/106115510/223072514-41f58382-97d9-40bd-bcd1-9ac5d70af7ea.png)
 
 This is the manu.
+![bild](https://user-images.githubusercontent.com/106115510/223078028-1cdb59c2-a105-4de0-b133-595dd4ad671a.png)
 
-This is wher you comming when you click on booking. 
+This is wher you comming when you click on booking.
+![bild](https://user-images.githubusercontent.com/106115510/223078180-0bffef8d-32a0-4e75-82c1-b23a33995839.png)
 
 Affter you have loggd in you comming her wher you can book.
+![bild](https://user-images.githubusercontent.com/106115510/223078287-5dde4302-d07e-4407-be5e-fbdff908c682.png)
 
 Hear is wher you can see the reservations.
+![bild](https://user-images.githubusercontent.com/106115510/223078340-2f296570-2ff0-439e-8798-38c5c816e080.png)
 
 When you have clickt on loggd out you comming her. 
+![bild](https://user-images.githubusercontent.com/106115510/223078389-8fb41619-9723-4191-a640-af44550f7dc7.png)
 
 # Features
 - Book a table.
