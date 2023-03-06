@@ -76,6 +76,7 @@ The development was done iterative and testing and finding bugs occure during th
 
 ## Remaining bugs
 - In the booking/edit booking form, if time is set for a out-of-office time and the warning shows (check exists) the DatePicker Widget won't show in retry.
+- There is a issue that collapsing of the hamburger, will not show menu. It been working before but doesn't seam to work all the time.
 
 ## Validator Testing
 - PEP8 via pylint locally on my computer
