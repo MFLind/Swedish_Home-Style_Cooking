@@ -15,6 +15,7 @@ During the design process Figma was used for sketching the UX design, design was
 Agile working methods with planning and iterative working was done during the process.
 
 A live view of how the website locks on differant screens:
+The design is made according to reactive web design, below different sizes for different devices are shown.has context menu.
 
 ![bild](https://user-images.githubusercontent.com/106115510/223115486-eefbf6c6-9a9c-41ed-b97c-bd480a178fea.png)
 
