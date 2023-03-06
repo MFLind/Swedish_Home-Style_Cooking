@@ -1,6 +1,7 @@
 asgiref==3.6.0
 astroid==2.14.2
-backports.zoneinfo;python_version<"3.9"
+backports.zoneinfo==0.2.1
+dj-database-url==1.2.0
 Django==4.1.6
 django-bootstrap-datepicker-plus==5.0.3
 django-bootstrap5==22.2
@@ -9,6 +10,7 @@ django-scheduler==0.10.1
 django-tempus-dominus==5.1.2.17
 icalendar==5.0.4
 platformdirs==3.0.0
+psycopg2==2.9.5
 pydantic==1.10.5
 python-dotenv==1.0.0
 pytz==2022.7.1
