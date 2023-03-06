@@ -61,6 +61,9 @@ I have done manual testing with the following methods:
 - Test website both locally on my command prompt and also on Heroku: https://swedish-home-style-cooking.herokuapp.com/
 - Testing inputs with both incorrect values and correct values
 
+![bild](https://user-images.githubusercontent.com/106115510/223101370-a5bfa3a6-94e3-4855-b9d0-2a8c999014fa.png)
+
+
 ## Bugs
 The development was done iterative and testing and finding bugs occure during the coding process.
 
