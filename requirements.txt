@@ -1,6 +1,6 @@
 asgiref==3.6.0
 astroid==2.14.2
-backports.zoneinfo==0.2.1
+backports.zoneinfo;python_version<"3.9"
 dj-database-url==1.2.0
 Django==4.1.6
 django-bootstrap-datepicker-plus==5.0.3
