@@ -1,7 +1,10 @@
+"""
+Swebooking URLs
+"""
+from django.contrib.auth.decorators import login_required
 from django.urls import path
 from swebooking import views
 from .views import SignUpView
-from django.contrib.auth.decorators import login_required
 
 
 urlpatterns = [
